@@ -12,8 +12,13 @@ class AccueilPage extends StatefulWidget {
 }
 
 class _AccueilPageState extends State<AccueilPage> {
+  Icon _icon = Icon(Icons.dark_mode);
+
   @override
   Widget build(BuildContext context) {
+    _icon = Icon(MyApp.themeNotifier.value == ThemeMode.light
+        ? Icons.dark_mode
+        : Icons.light_mode);
     return Scaffold(
         appBar: AppBar(
           // Here we take the value from the AccueilPage object that was created by
@@ -21,14 +26,14 @@ class _AccueilPageState extends State<AccueilPage> {
           title: Text(widget.title),
           actions: [
             IconButton(
-                icon: Icon(MyApp.themeNotifier.value == ThemeMode.light
-                    ? Icons.dark_mode
-                    : Icons.light_mode),
+                icon: _icon,
                 onPressed: () {
-                  MyApp.themeNotifier.value =
-                      MyApp.themeNotifier.value == ThemeMode.light
-                          ? ThemeMode.dark
-                          : ThemeMode.light;
+                  setState(() {
+                    MyApp.themeNotifier.value =
+                        MyApp.themeNotifier.value == ThemeMode.light
+                            ? ThemeMode.dark
+                            : ThemeMode.light;
+                  });
                 })
           ],
         ),

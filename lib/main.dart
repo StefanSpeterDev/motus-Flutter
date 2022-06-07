@@ -25,7 +25,7 @@ class MyApp extends StatelessWidget {
         builder: (_, ThemeMode currentMode, __) {
           return MaterialApp(
             // Remove the debug banner
-            // debugShowCheckedModeBanner: false,
+            debugShowCheckedModeBanner: false,
             title: 'Motus game',
             theme: ThemeData(primarySwatch: Colors.amber),
             darkTheme: ThemeData.dark(),
