@@ -14,8 +14,10 @@ class BottomNav extends StatefulWidget {
 
 class _BottomNavState extends State<BottomNav> {
   int _selectedIndex = 0;
+
   static const TextStyle optionStyle =
   TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
+
   static const List<Widget> _widgetOptions = <Widget>[
     AccueilPage(title: "Bienvenue",),
     GamePage(),
@@ -36,8 +38,9 @@ class _BottomNavState extends State<BottomNav> {
         child: _widgetOptions.elementAt(_selectedIndex),
       ),
       bottomNavigationBar: BottomNavigationBar(
+        backgroundColor: Colors.blueGrey,
         items: const <BottomNavigationBarItem>[
-          BottomNavigationBarItem(icon: Icon(Icons.home), label: "Accueil"),
+          BottomNavigationBarItem(icon: Icon(Icons.home), label: "Accueil",),
           BottomNavigationBarItem(icon: Icon(Icons.gamepad), label: "Jouer"),
           BottomNavigationBarItem(icon: Icon(Icons.leaderboard), label: "Leaderboard"),
           BottomNavigationBarItem(icon: Icon(Icons.person), label: "Profile"),
