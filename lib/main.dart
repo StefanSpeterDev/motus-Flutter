@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:motus/ui/common/bottomNav/bottom_nav.dart';
 import 'package:motus/ui/pages/accueil/accueil_page.dart';
 
 void main() {
@@ -29,7 +30,7 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home: const AccueilPage(title: 'Flutter Demo Home Page'),
+      home: const BottomNav(),
     );
   }
 }
